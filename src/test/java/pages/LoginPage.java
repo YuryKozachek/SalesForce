@@ -1,8 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class LoginPage extends BasePage {
 
     private final By LOGIN_FIELD = By.id("username");
@@ -13,13 +15,17 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void open() {
+    public LoginPage open() {
+        log.info("Open Login Page");
         driver.get(BASE_URL);
+        return this;
     }
 
-    public void login(String user, String password) {
+    public HomePage login(String user, String password) {
+        log.info("Log in: {}, {} ", user, password);
         driver.findElement(LOGIN_FIELD).sendKeys(user);
         driver.findElement(PASSWORD_FIELD).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();
+        return new HomePage(driver);
     }
 }
