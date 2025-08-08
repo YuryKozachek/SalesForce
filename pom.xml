@@ -72,7 +72,7 @@
                 <version>3.5.3</version>
                 <configuration>
                     <suiteXmlFiles>
-<!--                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
+                        <!--                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
