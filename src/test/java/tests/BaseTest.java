@@ -1,5 +1,7 @@
 package tests;
 
+import com.github.javafaker.Faker;
+import dto.AccountFields;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,6 +25,9 @@ public class BaseTest {
     HomePage homePage;
     CreateAccountPage createAccountPage;
     NewAccountPage newAccountPage;
+    AccountFields accountFields;
+    AccountFields accountFieldsBuilder;
+    Faker faker;
 
     @BeforeMethod
     public void setSetting() {
@@ -43,6 +48,7 @@ public class BaseTest {
         homePage = new HomePage(driver);
         createAccountPage = new CreateAccountPage(driver);
         newAccountPage = new NewAccountPage(driver);
+        faker = new Faker();
     }
 
     @AfterMethod(alwaysRun = true)

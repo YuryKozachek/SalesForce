@@ -13,7 +13,8 @@ public class NewAccountPage extends BasePage {
         super(driver);
     }
 
-    public void checkConfirmAccountCreate() {
+    public NewAccountPage checkConfirmAccountCreate() {
         assertTrue(driver.findElement(CONFIRM_ACCOUNT_CREATE).isDisplayed());
+        return this;
     }
 }

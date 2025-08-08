@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BasePage {
+public abstract class BasePage {
 
     protected final String BASE_URL = "https://tms9-dev-ed.develop.lightning.force.com/";
 
@@ -14,9 +14,6 @@ public class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-    }
-
-    public void getWait() {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 }
